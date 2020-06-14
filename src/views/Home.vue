@@ -89,7 +89,7 @@
             </v-col>
             <v-col cols="6"></v-col>
             <v-col cols="2"  class="f-sdcreen pa-0 ma-0 d-flex justify-center align-center">
-                <v-btn dark="" text href="rules.dpf" target="_blank">Правила</v-btn>
+                <v-btn dark="" text href="rulles.pdf" target="_blank">Правила</v-btn>
             </v-col>
             <v-col cols="2" class="f-sdcreen pa-0 ma-0 d-flex justify-center align-center">
                 <v-btn dark="" text href="#regform" >Регистрация</v-btn>
@@ -342,7 +342,7 @@
                   <v-checkbox v-model="form.agreementTwo" class="mx-auto">
                     <template v-slot:label>
                       <span class="d-block mx-auto">
-                        *Регистрируясь, Вы подтверждаете, что изучили и согласны с <span style="z-index:9;"><a href="rules.pdf" target="_blank">правилами</a></span>  акции.
+                        *Регистрируясь, Вы подтверждаете, что изучили и согласны с <span style="z-index:9;"><a href="rulles.pdf" target="_blank">правилами</a></span>  акции.
                       </span>
                     </template>
                   </v-checkbox>
@@ -419,7 +419,7 @@
           >
               <v-list-item>
                 <v-list-item-content>
-                  <v-btn text href="rules.dpf" target="_blank" @click="mobMenuToogle">Правила</v-btn>
+                  <v-btn text href="rulles.pdf" target="_blank" @click="mobMenuToogle">Правила</v-btn>
                 </v-list-item-content>
               </v-list-item>
 
