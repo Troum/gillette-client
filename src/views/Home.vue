@@ -1,14 +1,165 @@
 <template>
-  <v-container class="ma-0 pa-0 fill-height" fluid>
-    <v-row class="fill-height pa-0 ma-0 d-flex justify-center align-center">
-      <v-col cols="12" lg="11" xl="9">
-        <v-card flat>
+  <v-container class=" ma-0 pa-0 fill-height bodyb desctop-class" fluid> 
+
+          
+      <v-row class="justify-space-around">
+            <v-col cols="11" class="d-flex d-sm-none">
+              <v-img
+              contain=""
+              aspect-ratio="1.5"
+              height="55vw"
+              src="../assets/m-1.svg"
+              >
+        
+              </v-img>
+              <v-btn
+              text
+              color="white"
+              dark=""
+              @click="mobMenuToogle"
+              >
+                <v-icon>mdi-menu</v-icon>
+              </v-btn>
+              
+            
+            </v-col>
+
+            
+            
+          </v-row>
+
+      <v-row class="justify-space-around">
+            <v-col cols="12" class="d-flex d-sm-none">
+              <v-img
+              contain=""
+              aspect-ratio="1"
+              height="75vw"
+              src="../assets/m-1-1.png"
+              >
+        
+              </v-img>
+            
+            </v-col>
+            
+          </v-row>
+      <v-row class="justify-space-around">
+            <v-col cols="12" class="d-flex d-sm-none">
+              <v-img
+              contain=""
+              aspect-ratio="1"
+              height="55vw"
+              style="margin-top:-20vw;"
+              src="../assets/m-1-2.svg"
+              >
+        
+              </v-img>
+            
+            </v-col>
+            
+          </v-row>
+
+      <v-row class="justify-space-around">
+            <v-col cols="12" class="d-flex d-sm-none">
+              <v-img
+              contain=""
+              aspect-ratio="1"
+              height="280vw"
+              style="margin-top:-20vw;"
+              src="../assets/m-mech.png"
+              >
+        
+              </v-img>
+            
+            </v-col>
+            
+          </v-row>
+    
+      <v-row class="d-none d-md-flex  pa-0 ma-0 d-flex justify-center align-center menu-d">
+        <v-col cols="8" class="d-none d-md-flex">
+          <v-row class="justify-space-around">
+            <v-col cols="2" class="f-sdcreen">
+              <v-img
+              contain=""
+              height="3rem"
+              src="../assets/logo.svg"
+              >
+        
+              </v-img>
+              <!-- <div class="first-screen1"></div> -->
+            </v-col>
+            <v-col cols="6"></v-col>
+            <v-col cols="2"  class="f-sdcreen pa-0 ma-0 d-flex justify-center align-center">
+                <v-btn dark="" text href="rules.dpf" target="_blank">Правила</v-btn>
+            </v-col>
+            <v-col cols="2" class="f-sdcreen pa-0 ma-0 d-flex justify-center align-center">
+                <v-btn dark="" text href="#regform" >Регистрация</v-btn>
+            </v-col>
+            
+          </v-row>
+        </v-col>
+      </v-row>
+    
+
+
+
+
+      <v-row class=" pa-0 ma-0 d-flex justify-center align-center">
+        <v-col cols="12" lg="12" xl="9" class="d-none d-md-flex f-screen">
+          <v-img
+          contain=""
+          aspect-ratio="1.5"
+          src="../assets/first-screen.svg"
+          >
+    
+          </v-img>
+          <!-- <div class="first-screen1"></div> -->
+        </v-col>
+      </v-row>
+  
+
+      <v-row class=" pa-0 ma-0 d-flex justify-center align-center">
+        <v-col cols="12" sm="8" class="d-none d-md-flex ">
+          
+          <v-img
+            contain=""
+            src="../assets/mech-title.svg"
+            class="reg-title"
+          ></v-img>
+        </v-col>
+        <v-col cols="12" lg="11" xl="9" class="d-none d-md-flex s-screen">
+          <v-img
+          contain=""
+          aspect-ratio="1.5"
+          src="../assets/meh-v.svg"
+          >
+    
+          </v-img>
+          <!-- <div class="first-screen1"></div> -->
+        </v-col>
+      </v-row>
+    
+
+
+
+    <!-- ///// REGFORM////// -->
+    <a name="regform-mob"></a>
+    <v-row class="pa-0 ma-0 d-flex justify-center">
+      <v-col cols="12" sm="8" class="d-none d-md-flex "><a name="regform"></a>
+        
+        <v-img
+          contain=""
+          src="../assets/reg-title.svg"
+          class="reg-title"
+        ></v-img>
+      </v-col>
+      <v-col cols="10" sm="10" md="10" lg="11" xl="8" class="reg-form">
+        <v-card flat dark="" color="transparent">
           <validation-observer ref="observer" v-slot="{ passes }">
-            <v-form @submit.prevent="passes( submit )">
+            <v-form @submit.prevent="passes( submit )" >
               <v-row>
                 <v-col cols="12" lg="4">
                   <validation-provider name="Фамилия" rules="required" v-slot="{ errors }">
-                    <v-text-field autocomplete="off" :error-messages="errors"
+                    <v-text-field   autocomplete="off" :error-messages="errors"
                                   v-model="form.name"
                                   label="Фамилия*" dense outlined type="text"></v-text-field>
                   </validation-provider>
@@ -165,14 +316,14 @@
                     </v-col>
                   </v-row>
                   <v-row class="ma-0 pa-0">
-                    <v-col class="pa-0" cols="10">
+                    <v-col class="pa-0" cols="12" sm="10">
                       <validation-provider name="Наименование акционного товара" rules="required" v-slot="{ errors }">
                         <v-select outlined dense :error-messages="errors"
                                   v-model="form.good"
                                   :items="$store.getters.goods"></v-select>
                       </validation-provider>
                     </v-col>
-                    <v-col class="pa-0" cols="2">
+                    <v-col class="pa-0" cols="3" sm="2">
                       <validation-provider name="Количество акционного товара" rules="required" v-slot="{ errors }">
                         <v-select outlined dense :error-messages="errors"
                                   v-model="form.count" :items="$store.getters.counts"></v-select>
@@ -191,7 +342,7 @@
                   <v-checkbox v-model="form.agreementTwo" class="mx-auto">
                     <template v-slot:label>
                       <span class="d-block mx-auto">
-                        *Регистрируясь, Вы подтверждаете, что изучили и согласны с <a href="#">правилами</a> акции.
+                        *Регистрируясь, Вы подтверждаете, что изучили и согласны с <span style="z-index:9;"><a href="rules.pdf" target="_blank">правилами</a></span>  акции.
                       </span>
                     </template>
                   </v-checkbox>
@@ -209,6 +360,78 @@
         </v-card>
       </v-col>
     </v-row>
+    <!-- ///// END  REGFORM////// -->
+    <!-- <v-row class=" pa-0 ma-0 d-flex justify-center align-center">
+      <v-col cols="12" lg="11" xl="9" class="foo-screen">
+        <v-img
+        contain=""
+        aspect-ratio="1.87"
+        src="../assets/footer-d.svg"
+        >
+  
+        </v-img>
+      </v-col>
+    </v-row> -->
+    <v-footer
+      absolute
+      class="d-none d-md-flex font-weight-medium"
+      
+      color="transparent"
+      padless
+    >
+      <v-col
+        class="text-center"
+        cols="12"
+        
+      >
+        <v-img
+        src="../assets/footer-d.svg"
+        min-height="15rem"
+        contain=""
+        aspect-ratio="2.5"
+        >
+
+        </v-img>
+      </v-col>
+    </v-footer>
+
+    <v-row class="justify-space-around">
+            <v-col cols="12" class="d-flex d-sm-none">
+              <v-img
+              contain=""
+              aspect-ratio="1.5"
+              height="105vw"
+              style="margin-top:-60vw"
+              src="../assets/m-footer.png"
+              >
+        
+              </v-img>
+            
+            </v-col>
+            
+          </v-row>
+
+          <v-card
+            v-if="mMenu"
+            class="mx-auto menu-mob"
+            max-width="400"
+            tile
+          >
+              <v-list-item>
+                <v-list-item-content>
+                  <v-btn text href="rules.dpf" target="_blank" @click="mobMenuToogle">Правила</v-btn>
+                </v-list-item-content>
+              </v-list-item>
+
+              <v-list-item two-line>
+                <v-list-item-content>
+                  <v-btn text href="#regform-mob" @click="mobMenuToogle">Регистрация</v-btn>
+                </v-list-item-content>
+              </v-list-item>
+          </v-card>
+
+
+    
   </v-container>
 </template>
 
@@ -218,6 +441,7 @@
     name: 'Home',
     data() {
       return {
+        mMenu: false,
         loading: false,
         form: {
           name: null,
@@ -247,6 +471,10 @@
       }
     },
     methods: {
+      mobMenuToogle(){
+        this.mMenu = !this.mMenu;
+        console.log (!this.mMenu)
+      },
       submit(){
         this.loading = true;
         this.$httpService.post('api/participate', this.$fdService.fill(this.form))
@@ -277,3 +505,65 @@
     }
   }
 </script>
+
+<style>
+.menu-mob {
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+}
+.menu-d {
+  z-index: 9;
+}
+  .first-screen {
+    background-image: url(../assets/first-screen.svg);
+    max-height: 70rem;
+    position: relative;
+    margin-top: -26rem;
+    width: 50rem;
+  }
+  .f-screen {
+    margin-top: -2.5rem;
+  }
+  .s-screen {
+    margin-top: -6rem;
+  }
+  .reg-title {
+    margin-top: 7rem;
+    margin-bottom: 4rem;
+    z-index: 999;
+  }
+  .reg-title .v-responsive__sizer{
+    margin-bottom: 3rem;
+  }
+  .foo-screen v-image v-responsive__sizer {
+    padding: 0;
+  }
+  .foo-screen {
+    margin-bottom: -40rem!important;
+    max-height: 10rem;
+  }
+  .v-responsive__sizer {
+    /* padding-bottom: 10px!important; */
+    margin-bottom: -22rem;
+  }
+  .reg-form {
+    margin-bottom: 17rem;
+    z-index: 9;
+    font-size: 1rem;
+  }
+  .v-input__slot fieldset {
+    border: solid 1px #EC6720;
+  }
+  .v-input__append-inner .v-input__icon--append {
+    background-color: #EC6720;
+  }
+  .v-select__selections {
+    font-size: .85rem;
+  }
+  @media screen and (max-width: 901px) {
+    .desctop-class {
+      display: none;
+    }
+  }
+</style>
