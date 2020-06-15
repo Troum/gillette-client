@@ -7,7 +7,7 @@
             max-width="600"
             :timeout="1000 * 5"
     >
-        <v-card dark color="primary" flat>
+        <v-card dark color="transparent" flat>
             <v-card-text>
                 <v-row>
                     <v-col class="d-flex align-center" cols="10">

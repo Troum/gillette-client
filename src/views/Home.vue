@@ -221,7 +221,7 @@
                     <v-select outlined dense :error-messages="errors"
                               label="Торговый объект*"
                               v-model="form.shop" :items="$store.getters.shops"></v-select></validation-provider>
-                  <validation-provider name="Фото чека" rules="required" v-slot="{ errors }">
+                  <validation-provider name="Фото чека" rules="required|size:1000" v-slot="{ errors }">
                     <div style="position: relative" class="d-flex align-center ma-0 pa-0">
                       <div v-if="!form.file" style="position: absolute;color: #c0c0d8" class="mt-n3 ml-3">
                         <span style="z-index: 0">Загрузить фото чека</span>
@@ -516,6 +516,7 @@
                   this.$refs.observer.reset();
                   this.$store.commit('alert', {message: response.data.success, });
                   this.$fdService.reset(this.form);
+                  this.form.phoneCode = '+375';
                 })
                 .finally(() => {
                   this.loading = false
