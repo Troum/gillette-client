@@ -273,19 +273,19 @@
                     </v-col>
                     <v-col class="ma-0 pa-0" cols="12">
                       <v-row class="ma-0 pa-0">
-                        <v-col class="pa-0" cols="3">
+                        <v-col class="pa-0" cols="4">
                           <validation-provider name="День покупки" rules="required" v-slot="{ errors }">
                             <v-select outlined dense :error-messages="errors"
                                       v-model="form.dayBuy"
                                       :items="$store.getters.days"></v-select></validation-provider>
                         </v-col>
-                        <v-col class="pa-0" cols="7">
+                        <v-col class="pa-0" cols="5">
                           <validation-provider name="Месяц покупки" rules="required" v-slot="{ errors }">
                             <v-select outlined dense :error-messages="errors"
                                       v-model="form.monthBuy"
                                       :items="$store.getters.months"></v-select></validation-provider>
                         </v-col>
-                        <v-col class="pa-0" cols="2">
+                        <v-col class="pa-0" cols="3">
                           <validation-provider name="Год покупки" rules="required" v-slot="{ errors }">
                             <v-text-field autocomplete="off" :error-messages="errors"  v-model="form.year"
                                           readonly outlined dense type="text"></v-text-field>
@@ -300,21 +300,21 @@
                     </v-col>
                     <v-col class="ma-0 pa-0" cols="12">
                       <v-row class="ma-0 pa-0">
-                        <v-col class="pa-0" cols="3">
+                        <v-col class="pa-0" cols="4">
                           <validation-provider name="День регистрации" rules="required" v-slot="{ errors }">
                             <v-select outlined dense :error-messages="errors"
                                       v-model="form.dayRegister"
                                       :items="$store.getters.days"></v-select>
                           </validation-provider>
                         </v-col>
-                        <v-col class="pa-0" cols="7">
+                        <v-col class="pa-0" cols="5">
                           <validation-provider name="Месяц регистрации" rules="required" v-slot="{ errors }">
                             <v-select outlined dense :error-messages="errors"
                                       v-model="form.monthRegister"
                                       :items="$store.getters.months"></v-select>
                           </validation-provider>
                         </v-col>
-                        <v-col class="pa-0" cols="2">
+                        <v-col class="pa-0" cols="3">
                           <validation-provider name="Год регистрации" rules="required" v-slot="{ errors }">
                             <v-text-field autocomplete="off" :error-messages="errors"  v-model="form.year"
                                           readonly outlined dense type="text"></v-text-field>
@@ -338,7 +338,7 @@
                                   :items="$store.getters.goods"></v-select>
                       </validation-provider>
                     </v-col>
-                    <v-col class="pa-0" cols="3" sm="2">
+                    <v-col class="pa-0" cols="6" sm="2">
                       <v-row class="ma-0 pa-0">
                         <v-col cols="12" class="ma-0 pa-0 mt-n6">
                           <small>Количество(шт)*</small>
@@ -353,7 +353,7 @@
                 </v-col>
               </v-row>
               <v-row>
-                <v-col cols="8" class="mx-auto d-flex justify-center flex-column">
+                <v-col cols="12" class="agree-mob mx-auto d-flex justify-center flex-column">
                   <v-checkbox v-model="form.agreementOne" class="mx-auto">
                     <template v-slot:label>
                       <span class="d-block mx-auto">*Регистрируясь, Вы подтверждаете свое согласия на участие в акции.</span>
@@ -367,7 +367,7 @@
                     </template>
                   </v-checkbox>
                 </v-col>
-                <v-col cols="8" class="mx-auto text-center">
+                <v-col cols="12" class="mx-auto text-center">
                   <v-btn :disabled="!form.agreementOne || !form.agreementTwo"
                          :loading="loading"
                          color="#EC6720" type="submit">
@@ -599,6 +599,33 @@
   @media screen and (max-width: 901px) {
     .desctop-class {
       display: none;
+    }
+
+    .v-list-item__title {
+      word-wrap:normal;
+      font-size: 2.4vw!important;
+      white-space:pre-line;
+      
+    }
+    .v-label {
+      font-size: 4vw;
+    }
+    .v-text-field__slot {
+      font-size: 4vw;
+    }
+    .v-select__selection {
+      font-size: 4vw;
+    }
+    .agree-mob {
+      padding:0px;
+    }
+    .v-input--selection-controls {
+      margin: 0;
+    }
+    .v-list-item {
+      padding-left: 4px;
+      padding-right: 0px;
+      
     }
   }
   .question:hover {
