@@ -604,7 +604,7 @@
     .v-list-item__title {
       word-wrap:normal;
       font-size: 2.4vw!important;
-      white-space:pre-line;
+      white-space:pre-line!important;
       
     }
     .v-label {
