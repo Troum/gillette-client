@@ -21,11 +21,7 @@ $http.interceptors.response.use(response => {
             case 401:
             case 404:
             case 409:
-                store.commit('emitted', {
-                    status: true,
-                    content: {error: error.response.data.error},
-                    auth: true
-                });
+                store.commit('alert', {message: error.response.data.error });
                 break;
             case 403:
                 break;
