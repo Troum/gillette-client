@@ -510,6 +510,9 @@
         console.log (!this.mMenu)
       },
       submit(){
+        this.form.goodText = this.$store.getters.goods.filter((item) => {
+          return item.text === this.form.goodText ? item.text : ''
+        })
         this.loading = true;
         this.$httpService.post('api/participate', this.$fdService.fill(this.form))
                 .then(response => {
@@ -605,7 +608,7 @@
       word-wrap:normal;
       font-size: 2.4vw!important;
       white-space:pre-line!important;
-      
+
     }
     .v-label {
       font-size: 4vw;
@@ -625,7 +628,7 @@
     .v-list-item {
       padding-left: 4px;
       padding-right: 0px;
-      
+
     }
   }
   .question:hover {
